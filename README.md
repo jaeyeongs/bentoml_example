@@ -51,7 +51,13 @@ bentoml serve iris_classifier:4dbmbmvcakkyjb4w
 
 ### 연동
 
-### MLFlow를 통한 실험 모델 및 결과
+```
+lr_model_runner = bentoml.mlflow.get("logistic_regression_model:latest").to_runner()
+
+```
+bentoml은 mlflow를 지원하기 때문에 mlflow에 저장했던 Logistic Regression 모델을 bentoml에서 불러올 수 있다.
 
 
 ## 실습 결론
+
+bentoml은 코드 몇 줄로 간단히 API를 생성하여 모델을 배포할 수 있고, Dockerize가 가능하여 모델 패키징이 매우 편리하다. 전체적인 모델 배포 환경에서 MLFlow를 통해 모델을 튜닝하고 최적화된 모델을 패키징하고 배포하는 것은 BentoML을 활용하는 것이 매우 편리함을 느꼈다. 머신러닝을 다루는 실무자에겐 매우 유용한 프레임워크이기 때문에 유용하게 활용될 것이다.
