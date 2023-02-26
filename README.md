@@ -53,8 +53,8 @@ bentoml serve iris_classifier:4dbmbmvcakkyjb4w
 
 ```
 lr_model_runner = bentoml.mlflow.get("logistic_regression_model:latest").to_runner()
-
 ```
+
 bentoml은 mlflow를 지원하기 때문에 mlflow에 저장했던 Logistic Regression 모델을 bentoml에서 불러올 수 있다.
 
 
