@@ -23,21 +23,22 @@ bentoml build
 
 ![image](https://user-images.githubusercontent.com/87981867/220234349-263b854a-0868-41b9-8461-beae029d8ac4.png)
 
-도커를 빌드하면 위와 같이 모델 파일, dockerfile 등이 생성 된다.
+- Terminal 창에서 도커를 빌드하면 위와 같이 모델 파일, dockerfile 등이 생성 
 
 ### (2) Docker image
 
-```
+```python
 bentoml containerize iris_classifier:latest
 ```
 
 ![image](https://user-images.githubusercontent.com/87981867/220234082-2591ac3b-d058-4d96-8d00-d33fd29d9715.png)
 
-생성된 도커 파일로 위와 같은 명령어로 컨테이너를 생성할 수 있다.
+- 생성된 도커 파일로 위와 같은 명령어로 컨테이너를 생성할 수 있음
+- 단, 서버 환경이 docker 명령어가 입력되는 컨테이너 환경이어야 함(로컬에서는 docker 설치가 필요)
 
 ### (3) API Serving
 
-```
+```python
 bentoml serve iris_classifier:4dbmbmvcakkyjb4w
 ```
 
@@ -45,17 +46,17 @@ bentoml serve iris_classifier:4dbmbmvcakkyjb4w
 
 ![image](https://user-images.githubusercontent.com/87981867/220235197-0abca161-f2c2-4191-a8d6-e6b10dbdd280.png)
 
-명령어를 실행하고 127.0.0.1:3000 접속하면 Web UI가 호출 된다.
+- 명령어를 실행하고 127.0.0.1:3000 주소로 접속하면 Web UI가 호출 됨
 
 ## 3. BentoML를 활용한 MLFlow
 
 ### 연동
 
-```
+```python
 lr_model_runner = bentoml.mlflow.get("logistic_regression_model:latest").to_runner()
 ```
 
-bentoml은 mlflow를 지원하기 때문에 mlflow에 저장했던 Logistic Regression 모델을 bentoml에서 불러올 수 있다.
+- bentoml은 mlflow를 지원하기 때문에 mlflow에 저장했던 Logistic Regression 모델을 bentoml에서 불러올 수 있
 
 
 ## 실습 결론
